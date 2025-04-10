@@ -2845,7 +2845,7 @@
 }
 /* line 5, sass/basic/_common.scss */
 body {
-  padding-top: 65px;
+  /*padding-top: 65px;*/
   background: #f5f5f5;
 }
 
@@ -8942,7 +8942,7 @@ a.list-group-item.active > .badge, .nav-pills > .active > a > .badge {
 @media (min-width: 768px) {
   /* line 20, sass/basic/_mediaQueries.scss */
   body {
-    padding-top: 85px;
+    /*padding-top: 85px;*/
   }
 
   /* line 22, sass/basic/_mediaQueries.scss */
