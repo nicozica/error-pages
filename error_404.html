@@ -50,11 +50,11 @@
 
 <body>
     <!-- Main Content -->
-    <div class="maintenance-page" id="error-500">
+    <div class="maintenance-page" id="error-404">
     </div><!-- maintenance-page -->
     <script>
         const language = navigator.language.substring(0, 2);
-        const element = document.getElementById('error-500');
+        const element = document.getElementById('error-404');
 
         function loadContent(url, fallback) {
             const xhr = new XMLHttpRequest();
@@ -69,7 +69,7 @@
             };
             xhr.send();
         }
-        loadContent('/translations/error_500/' + language + '.html', '/translations/error_500/en.html');
+        loadContent('/translations/error_404/' + language + '.html', '/translations/error_404/en.html');
 
         window.onload = function () {
 	        document.getElementById("current-year").textContent = new Date().getFullYear();
