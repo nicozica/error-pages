@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ipsos iSay</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frank">
+    <meta name="author" content="Ipsos">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" type="image/png" href="/assets/ico/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/ico/favicon.ico">
+
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/assets/css/styles.css" rel="stylesheet" media="screen">
+    <link href="/assets/css/libs.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" href="/commons.css">
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 10]>
+      <script src="/pages/assets/js/html5shiv.js"></script>
+      <script src="/pages/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- <script src="/pages/assets/js/jquery.js"></script> -->
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="/pages/assets/js/bootstrap.min.js"></script>
+    <script src="/pages/assets/js/bootstrap-select.min.js"></script>   
+  	<script src="/pages/assets/js/masonry.pkgd.min.js"></script>    
+  	<script src="/pages/assets/js/imagesloaded.pkgd.min.js"></script>    
+	<script src="/pages/assets/js/handlebars.js"></script>     
+	<script src="/pages/assets/js/typeahead.bundle.min.js"></script>  -->
+
+    <!--  Disabled scripts that casuse bottlenecks
+	<script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
+	<script src="http://rawgithub.com/desandro/classie/master/classie.js"></script>
+  	<script type="text/javascript" src="//cdn.sublimevideo.net/js/hjnacuwi.js"></script>
+  	-->
+
+    <!-- <script src="/pages/assets/js/prototype.js"></script> -->
+
+</head>
+
+<body>
+    <!-- Main Content -->
+    <div class="maintenance-page" id="error-500">
+    </div><!-- maintenance-page -->
+    <script>
+        const language = navigator.language.substring(0, 2);
+        const element = document.getElementById('error-500');
+
+        function loadContent(url, fallback) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState !== 4) return;
+                if (xhr.status === 200) {
+                    element.innerHTML = xhr.responseText || '';
+                    return;
+                }
+                if (fallback) loadContent(fallback);
+            };
+            xhr.send();
+        }
+        loadContent('/translations/error_500/' + language + '.html', '/translations/error_500/en.html');
+    </script>
+</body>
+
+</html>
